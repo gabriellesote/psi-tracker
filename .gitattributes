@@ -1,0 +1,6 @@
+# .gitattributes
+# Força quebra de linha no padrão Linux (LF). Sem isso, o Windows salva com CRLF
+# e scripts dentro dos containers Docker podem quebrar.
+* text=auto eol=lf
+*.png binary
+*.jpg binary

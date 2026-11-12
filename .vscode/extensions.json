@@ -1,0 +1,10 @@
+// .vscode/extensions.json — o VS Code sugere instalar estas extensões ao abrir o projeto
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "ms-azuretools.vscode-docker",
+    "editorconfig.editorconfig"
+  ]
+}

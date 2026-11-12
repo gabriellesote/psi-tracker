@@ -1,0 +1,22 @@
+# .gitignore
+
+# Dependências e builds
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Variáveis de ambiente (contêm chaves!)
+.env
+.env.local
+.env.*.local
+
+# Logs e sistema
+*.log
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/*
+!.vscode/extensions.json
+.idea/

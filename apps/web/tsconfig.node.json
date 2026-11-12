@@ -1,0 +1,18 @@
+// apps/web/tsconfig.node.json — configuração dos arquivos que rodam no Node (ex.: vite.config.ts)
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "types": ["node"],
+    "skipLibCheck": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "verbatimModuleSyntax": true,
+    "strict": true
+  },
+  "include": ["vite.config.ts"]
+}

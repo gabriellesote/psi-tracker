@@ -1,0 +1,5 @@
+-- supabase/seed.sql
+--
+-- Dados iniciais para desenvolvimento local.
+-- Roda automaticamente em `npm run db:reset`.
+-- Por enquanto vazio: crie sua conta pela tela de cadastro do app.

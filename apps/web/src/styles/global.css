@@ -1,0 +1,11 @@
+/* apps/web/src/styles/global.css */
+@import 'tailwindcss';
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+}
