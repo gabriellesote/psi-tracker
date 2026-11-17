@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "PSI Tracker",
+    "slug": "psi-tracker",
+    "version": "0.1.0",
+    "scheme": "psitracker",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gabriellesote.psitracker"
+    },
+    "android": {
+      "package": "com.gabriellesote.psitracker",
+      "adaptiveIcon": {
+        "backgroundColor": "#EDE6FF",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 160,
+          "resizeMode": "contain",
+          "backgroundColor": "#FAF7FF"
+        }
+      ],
+      "expo-web-browser",
+      "expo-sqlite",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
