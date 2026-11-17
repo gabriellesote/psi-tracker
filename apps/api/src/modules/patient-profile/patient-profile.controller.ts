@@ -3,11 +3,11 @@
 // Camada HTTP: lê a requisição, valida a entrada, chama o service e responde.
 // Nenhuma regra de negócio mora aqui.
 
+import { updatePatientProfileSchema } from '@psi-tracker/shared';
 import type { Request, Response } from 'express';
 
 import { getAuthenticatedContext } from '../../shared/http/get-authenticated-context.js';
 import { PatientProfileRepository } from './patient-profile.repository.js';
-import { updatePatientProfileSchema } from './patient-profile.schemas.js';
 import { PatientProfileService } from './patient-profile.service.js';
 
 function buildPatientProfileService(request: Request) {

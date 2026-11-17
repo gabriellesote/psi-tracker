@@ -10,7 +10,7 @@ export function ProtectedRoute() {
   const { session, isLoadingSession } = useAuth();
 
   if (isLoadingSession) {
-    return <p className="p-8 text-slate-500">Carregando…</p>;
+    return <p className="p-8 text-text-secondary">Carregando…</p>;
   }
 
   if (!session) {

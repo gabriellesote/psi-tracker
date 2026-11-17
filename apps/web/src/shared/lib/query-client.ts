@@ -1,8 +1,8 @@
 // apps/web/src/shared/lib/query-client.ts
 //
-// O React Query guarda em cache as respostas da API e recarrega quando preciso.
-// É ele que mantém as frentes "conectadas" na tela: ao salvar algo em uma,
-// invalidamos o cache e as outras se atualizam sozinhas.
+// Cache das respostas da API. A sincronização em tempo real invalida este cache
+// sempre que algo muda no banco (inclusive pelo celular) e a tela se atualiza sozinha.
+// Ao voltar para a aba do navegador, os dados também são conferidos (rede de segurança).
 
 import { QueryClient } from '@tanstack/react-query';
 
@@ -11,7 +11,7 @@ export const queryClient = new QueryClient({
     queries: {
       staleTime: 30_000,
       retry: 1,
-      refetchOnWindowFocus: false,
+      refetchOnWindowFocus: true,
     },
   },
 });

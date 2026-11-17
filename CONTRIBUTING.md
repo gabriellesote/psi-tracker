@@ -34,6 +34,27 @@ git push -u origin feature/sessoes-crud
 Depois, no GitHub, abra um **Pull Request** de `feature/sessoes-crud` → `develop`.
 Quando `develop` estiver testada e aprovada, abra um Pull Request de `develop` → `main`.
 
+## Uma feature por tela
+
+Cada tela (ou melhoria grande) tem a sua própria branch, para abrir e fechar implementações
+com facilidade e manter o histórico de evolução legível:
+
+| Tela / melhoria | Nome da branch |
+| --- | --- |
+| Diário (calendário) | `feature/tela-diario` |
+| Sessões | `feature/tela-sessoes` |
+| Financeiro | `feature/tela-financeiro` |
+| Caderno | `feature/tela-caderno` |
+| Perfil (remédios e transtornos) | `feature/tela-perfil` |
+| Ajuste visual geral | `feature/concept-design` |
+
+Regras:
+
+1. A branch sai sempre do `develop` atualizado.
+2. **Cada alteração vira um commit** com mensagem clara (veja abaixo). Nada de "ajustes" genéricos.
+3. Ao terminar, atualize o README (inclusive a tabela **Histórico de evolução**) no último commit da feature.
+4. Abra o Pull Request para o `develop`. Depois de testado e aprovado, `develop` → `main`.
+
 ## Mensagens de commit (Conventional Commits)
 
 Formato:
@@ -73,4 +94,6 @@ Agora só sessões "completed" dão baixa de R$ 225.
 - Backend: `routes → controller → service → repository`. Regra de negócio só no service.
 - Frontend: código de uma frente fica em `src/features/<frente>`; o que é reutilizado vai para `src/shared`.
 - Mudanças no banco **sempre** por migration (`npm run db:new-migration nome`), nunca editando pelo Studio.
-- Antes de commitar: `npm run format`, e em `apps/api` e `apps/web`: `npm run lint` e `npm run typecheck`.
+- Código usado por mais de um app (tipos, validações, regras, cores) vai para `packages/shared`.
+- No app (`apps/mobile`), instale pacotes com `npx expo install <pacote>`.
+- Antes de commitar, na raiz: `npm run format`, `npm run lint` e `npm run typecheck`.

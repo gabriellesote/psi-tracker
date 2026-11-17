@@ -5,16 +5,22 @@
 interface PagePlaceholderProps {
   title: string;
   description: string;
+  emoji: string;
 }
 
-export function PagePlaceholder({ title, description }: PagePlaceholderProps) {
+export function PagePlaceholder({ title, description, emoji }: PagePlaceholderProps) {
   return (
-    <section className="space-y-2">
-      <h1 className="text-2xl font-semibold text-slate-800">{title}</h1>
-      <p className="text-slate-600">{description}</p>
-      <p className="inline-block rounded-full bg-amber-100 px-3 py-1 text-xs text-amber-800">
-        Em construção
-      </p>
+    <section className="space-y-6">
+      <h1 className="text-4xl font-extrabold">{title}</h1>
+      <div className="flex flex-col items-center gap-3 rounded-large bg-surface px-6 py-16 text-center ring-1 ring-border">
+        <span className="text-5xl" aria-hidden>
+          {emoji}
+        </span>
+        <p className="max-w-md text-text-secondary">{description}</p>
+        <span className="rounded-full bg-primary-soft px-3 py-1 text-xs font-bold text-primary-strong">
+          Em construção
+        </span>
+      </div>
     </section>
   );
 }

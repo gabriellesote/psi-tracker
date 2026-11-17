@@ -9,14 +9,3 @@ export interface PatientProfileRow {
   gender: string | null;
   updated_at: string;
 }
-
-/** Formato que a API devolve para o frontend (camelCase + campos calculados). */
-export interface PatientProfile {
-  userId: string;
-  fullName: string | null;
-  birthDate: string | null;
-  ageInYears: number | null;
-  weightKg: number | null;
-  gender: string | null;
-  updatedAt: string;
-}

@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "description": "Tracker pessoal de sessões de terapia, financeiro, caderno, perfil e diário.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "db:start": "supabase start",
     "db:stop": "supabase stop",
@@ -12,11 +16,18 @@
     "dev": "docker compose up --build",
     "dev:down": "docker compose down",
     "dev:logs": "docker compose logs -f",
+    "mobile": "npm run start --workspace @psi-tracker/mobile",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
   "devDependencies": {
     "prettier": "3.10.0",
     "supabase": "3.1.0"
+  },
+  "overrides": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
   }
 }

@@ -3,9 +3,9 @@
 // Camada de acesso a dados: o ÚNICO lugar deste módulo que conversa com o banco.
 // Se um dia trocarmos o Supabase por outra coisa, só esta camada muda.
 
+import type { UpdatePatientProfileInput } from '@psi-tracker/shared';
 import type { SupabaseClient } from '@supabase/supabase-js';
 
-import type { UpdatePatientProfileInput } from './patient-profile.schemas.js';
 import type { PatientProfileRow } from './patient-profile.types.js';
 
 const PATIENT_PROFILE_COLUMNS = 'user_id, full_name, birth_date, weight_kg, gender, updated_at';

@@ -2,32 +2,26 @@
 
 import { NavLink } from 'react-router';
 
-const navigationItems = [
-  { path: '/', label: 'Diário', icon: '📅' },
-  { path: '/sessoes', label: 'Sessões', icon: '🗓️' },
-  { path: '/financeiro', label: 'Financeiro', icon: '💰' },
-  { path: '/caderno', label: 'Caderno', icon: '📓' },
-  { path: '/perfil', label: 'Meu perfil', icon: '🙂' },
-] as const;
+import { navigationItems } from './navigation-items';
 
 export function SidebarNavigation() {
   return (
     <nav className="flex gap-1 overflow-x-auto md:flex-col">
-      {navigationItems.map((navigationItem) => (
+      {navigationItems.map(({ path, label, Icon }) => (
         <NavLink
-          key={navigationItem.path}
-          to={navigationItem.path}
-          end={navigationItem.path === '/'}
+          key={path}
+          to={path}
+          end={path === '/'}
           className={({ isActive }) =>
-            `flex items-center gap-2 whitespace-nowrap rounded-lg px-3 py-2 text-sm ${
+            `flex items-center gap-3 whitespace-nowrap rounded-full px-4 py-2.5 font-semibold transition ${
               isActive
-                ? 'bg-violet-100 font-medium text-violet-800'
-                : 'text-slate-600 hover:bg-slate-100'
+                ? 'bg-primary-soft text-primary-strong'
+                : 'text-text-secondary hover:bg-surface-muted'
             }`
           }
         >
-          <span aria-hidden>{navigationItem.icon}</span>
-          {navigationItem.label}
+          <Icon size={20} strokeWidth={2.2} aria-hidden />
+          {label}
         </NavLink>
       ))}
     </nav>

@@ -4,3 +4,5 @@ dist
 package-lock.json
 supabase/config.toml
 *.md
+.expo
+apps/mobile/assets

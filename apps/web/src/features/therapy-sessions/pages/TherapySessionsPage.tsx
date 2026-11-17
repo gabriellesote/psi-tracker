@@ -5,6 +5,7 @@ import { PagePlaceholder } from '@/shared/components/ui/PagePlaceholder';
 export function TherapySessionsPage() {
   return (
     <PagePlaceholder
+      emoji="🗓️"
       title="Sessões"
       description="Datas das sessões com status: realizada, a realizar ou reagendada."
     />
