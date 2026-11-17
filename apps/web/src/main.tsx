@@ -8,6 +8,7 @@ import { RouterProvider } from 'react-router';
 
 import { AppProviders } from '@/app/AppProviders';
 import { router } from '@/app/router';
+import { applyDesignTokensToDocument } from '@/shared/theme/apply-design-tokens';
 import '@/styles/global.css';
 
 const rootElement = document.getElementById('root');
@@ -15,6 +16,8 @@ const rootElement = document.getElementById('root');
 if (!rootElement) {
   throw new Error('Elemento #root não encontrado no index.html');
 }
+
+applyDesignTokensToDocument();
 
 createRoot(rootElement).render(
   <StrictMode>

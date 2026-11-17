@@ -5,6 +5,7 @@ import { PagePlaceholder } from '@/shared/components/ui/PagePlaceholder';
 export function FinancePage() {
   return (
     <PagePlaceholder
+      emoji="💰"
       title="Financeiro"
       description="Pacotes de R$ 900,00 com baixa automática de R$ 225,00 a cada sessão realizada."
     />

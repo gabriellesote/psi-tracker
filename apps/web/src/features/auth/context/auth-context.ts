@@ -7,8 +7,11 @@ export interface AuthContextValue {
   session: Session | null;
   currentUser: User | null;
   isLoadingSession: boolean;
-  signIn: (email: string, password: string) => Promise<void>;
-  signUp: (email: string, password: string) => Promise<void>;
+  /** Redireciona para o Google e volta logada para o site. */
+  signInWithGoogle: () => Promise<void>;
+  /** Login por e-mail: usado só no desenvolvimento local (ex.: para testar no celular). */
+  signInWithEmailForDevelopment: (email: string, password: string) => Promise<void>;
+  signUpWithEmailForDevelopment: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
 }
 
