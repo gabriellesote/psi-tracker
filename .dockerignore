@@ -1,0 +1,12 @@
+# .dockerignore
+# O que NÃO deve ser copiado para dentro das imagens Docker
+**/node_modules
+**/dist
+**/.env
+**/.env.*
+.git
+supabase
+# O app de celular não roda no Docker: só o package.json dele é necessário
+# (o npm precisa dele para validar o package-lock.json)
+apps/mobile/*
+!apps/mobile/package.json

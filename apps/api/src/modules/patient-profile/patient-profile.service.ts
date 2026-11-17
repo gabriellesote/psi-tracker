@@ -3,10 +3,11 @@
 // Regras de negócio do perfil. Não sabe nada de HTTP nem de SQL:
 // recebe dados, aplica regras e devolve no formato da aplicação.
 
+import type { PatientProfile, UpdatePatientProfileInput } from '@psi-tracker/shared';
+
 import { NotFoundError } from '../../shared/errors/app-error.js';
 import type { PatientProfileRepository } from './patient-profile.repository.js';
-import type { UpdatePatientProfileInput } from './patient-profile.schemas.js';
-import type { PatientProfile, PatientProfileRow } from './patient-profile.types.js';
+import type { PatientProfileRow } from './patient-profile.types.js';
 
 export function calculateAgeInYears(birthDate: string, referenceDate = new Date()): number {
   const [birthYear, birthMonth, birthDay] = birthDate.split('-').map(Number) as [

@@ -1,19 +1,23 @@
 // apps/api/tsconfig.json
+//
+// O TypeScript aqui só CONFERE os tipos (noEmit). Quem gera o JavaScript é:
+//   - tsx, em desenvolvimento
+//   - tsup, no build de produção (ele também embute o pacote @psi-tracker/shared)
 {
   "compilerOptions": {
     "target": "ES2023",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "outDir": "dist",
-    "rootDir": "src",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "noEmit": true,
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "esModuleInterop": true,
+    "isolatedModules": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "sourceMap": true
+    "types": ["node"]
   },
   "include": ["src"]
 }

@@ -1,6 +1,7 @@
-// apps/api/src/modules/patient-profile/patient-profile.schemas.ts
+// packages/shared/src/patient-profile/patient-profile.schemas.ts
 //
-// Regras de validação do que o frontend pode enviar.
+// Regras de validação do perfil. A API usa para barrar dados inválidos
+// e o site/app podem usar para validar o formulário antes de enviar.
 
 import { z } from 'zod';
 

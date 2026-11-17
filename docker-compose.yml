@@ -1,15 +1,17 @@
 # docker-compose.yml
 #
-# Sobe o frontend (web) e o backend (api) em containers, com hot reload.
+# Sobe o site (web) e a API em containers, com hot reload.
 # O banco (Supabase + Postgres) roda em containers próprios, gerenciados
 # pela CLI do Supabase:  npm run db:start
+# O app de celular roda fora do Docker, com o Expo:  npm run mobile
 #
 # Uso:  docker compose up --build     (ou: npm run dev)
 
 services:
   api:
     build:
-      context: ./apps/api
+      context: . # raiz do repositório, para enxergar packages/shared
+      dockerfile: apps/api/Dockerfile
       target: development
     container_name: psi-tracker-api
     ports:
@@ -26,7 +28,8 @@ services:
       - 'host.docker.internal:host-gateway'
     volumes:
       # Espelha seu código dentro do container: salvou no VS Code, a API reinicia
-      - ./apps/api/src:/app/src
+      - ./apps/api/src:/app/apps/api/src
+      - ./packages/shared/src:/app/packages/shared/src
     healthcheck:
       test: ['CMD', 'wget', '-qO-', 'http://localhost:3333/api/health']
       interval: 10s
@@ -35,7 +38,8 @@ services:
 
   web:
     build:
-      context: ./apps/web
+      context: .
+      dockerfile: apps/web/Dockerfile
       target: development
     container_name: psi-tracker-web
     ports:
@@ -47,8 +51,9 @@ services:
       VITE_API_URL: http://localhost:3333/api
       WATCH_WITH_POLLING: 'true'
     volumes:
-      - ./apps/web/src:/app/src
-      - ./apps/web/index.html:/app/index.html
+      - ./apps/web/src:/app/apps/web/src
+      - ./apps/web/index.html:/app/apps/web/index.html
+      - ./packages/shared/src:/app/packages/shared/src
     depends_on:
       api:
         condition: service_healthy
