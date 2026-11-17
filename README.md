@@ -212,6 +212,16 @@ Todas as tabelas têm **Row Level Security** (cada usuário só acessa os própr
 - **App no celular não carrega / "Network request failed"** → confira o IP em `apps/mobile/.env`, o mesmo Wi-Fi e o Firewall do Windows.
 - **Porta em uso (`port is already allocated`)** → feche o programa que usa 5173/3333/543xx ou rode `npm run dev:down`.
 
+## 📜 Histórico de evolução
+
+Cada tela ou melhoria nasce numa branch `feature/...`, entra no `develop` por Pull Request
+e só chega ao `main` depois de testada. Ao fechar uma feature, adicione uma linha aqui.
+
+| Versão / Branch | O que entrou |
+| --- | --- |
+| `chore: commit inicial` | Estrutura base: React + Express + Supabase + Docker, schema do banco com RLS e tela de perfil |
+| `feature/app-mobile-login-google-sincronizacao` | Monorepo com pacote `shared`, app Expo, login com Google com sessão persistente, sincronização em tempo real e design tokens |
+
 ## 🤝 Contribuindo
 
 Veja o fluxo de branches e o padrão de commits em [CONTRIBUTING.md](./CONTRIBUTING.md).
