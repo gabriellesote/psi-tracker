@@ -19,5 +19,6 @@
 ## Checklist
 
 - [ ] Testei localmente com `npm run dev`
-- [ ] `npm run lint` e `npm run typecheck` passam em `apps/api` e `apps/web`
+- [ ] `npm run lint` e `npm run typecheck` passam (na raiz)
+- [ ] Se mexi no app, testei no celular com `npm run mobile`
 - [ ] Se mexi no banco, criei uma migration

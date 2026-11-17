@@ -73,4 +73,6 @@ Agora só sessões "completed" dão baixa de R$ 225.
 - Backend: `routes → controller → service → repository`. Regra de negócio só no service.
 - Frontend: código de uma frente fica em `src/features/<frente>`; o que é reutilizado vai para `src/shared`.
 - Mudanças no banco **sempre** por migration (`npm run db:new-migration nome`), nunca editando pelo Studio.
-- Antes de commitar: `npm run format`, e em `apps/api` e `apps/web`: `npm run lint` e `npm run typecheck`.
+- Código usado por mais de um app (tipos, validações, regras, cores) vai para `packages/shared`.
+- No app (`apps/mobile`), instale pacotes com `npx expo install <pacote>`.
+- Antes de commitar, na raiz: `npm run format`, `npm run lint` e `npm run typecheck`.
